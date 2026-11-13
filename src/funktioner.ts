@@ -21,12 +21,20 @@ export function formateraPris(pris: number): string {
 // 2. Momsdelen av ett pris med 12 % moms (fiktiv sats), avrundad till två decimaler.
 //    momsDel(112) ger 12.
 export function momsDel(pris: number): number {
-    // TODO
+    // TODO momsDel(112)
+
+    //let moms: number = (pris * 0.12) / 1.12
+    const moms: number = (pris * 0.12) / 1.12
+    return Number(moms.toFixed(2))
 }
 
 // 3. Priset efter rabatt i procent. medRabatt(100, 10) ger 90.
 export function medRabatt(pris: number, procent: number): number {
     // TODO
+    const rabatt: number = procent / 100
+    const prisMedRabatt: number = pris - rabatt
+
+    return Number(prisMedRabatt)
 }
 
 // 4. Är kaféet öppet? Vardagar 7–18, helger (lördag, söndag) 9–16.
