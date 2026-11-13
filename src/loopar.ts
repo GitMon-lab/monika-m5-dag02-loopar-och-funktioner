@@ -8,7 +8,7 @@ for (let index = 1; index <= 10; index++) {
 
 // UPPGIFT 2: skriv ut talen 10 till 1 (nedräkning) med en while-loop.
 //            Skriv "Kaffe!" efter 1.
-let index = 10
+let index: number = 10
 while (index >= 1) {
     console.log('tal ' + index)
     index--
@@ -17,6 +17,21 @@ console.log('Kaffe')
 
 // UPPGIFT 3: gör samma sak som uppgift 1, men skriv bara ut jämna tal.
 //            Tips: n % 2 === 0
+
+/*if (i % 2 === 0) {
+    console.log(i + ' är jämnt')
+} else {
+    console.log(i + ' är udda')
+}
+*/
+
+index = 10
+while (index >= 1) {
+    if (index % 2 === 0) {
+        console.log('tal jämnt ' + index)
+    }
+    index--
+}
 
 // UPPGIFT 4: här är kaféets prislista. Skriv ut ett kvitto med en for...of-loop:
 //            "Kardemummabulle: 35 kr" osv, och sist "Summa: ... kr".
