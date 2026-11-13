@@ -5,58 +5,67 @@
 // 1. Ska returnera priset som text med " kr".
 //    Heltal utan decimaler: formateraPris(35) ger "35 kr".
 //    Decimaltal med två decimaler och komma: formateraPris(91.8) ger "91,80 kr".
+
+// $$ alt console.log(` Hela summa ${summa} Att betala: ${attBetala} kr `)
 export function formateraPris(pris: number): string {
-  // TODO
+    // TODO
+    if (Number.isInteger(pris)) {
+        console.log(`${pris} kr`)
+        return `${pris} kr`
+    } else {
+        console.log(`${pris.toFixed(2).replace('.', ',')} kr`)
+        return `${pris.toFixed(2).replace('.', ',')} kr`
+    }
 }
 
 // 2. Momsdelen av ett pris med 12 % moms (fiktiv sats), avrundad till två decimaler.
 //    momsDel(112) ger 12.
 export function momsDel(pris: number): number {
-  // TODO
+    // TODO
 }
 
 // 3. Priset efter rabatt i procent. medRabatt(100, 10) ger 90.
 export function medRabatt(pris: number, procent: number): number {
-  // TODO
+    // TODO
 }
 
 // 4. Är kaféet öppet? Vardagar 7–18, helger (lördag, söndag) 9–16.
 //    Öppnar vid starttimmen, stänger vid sluttimmen (18 är stängt).
 export function ärÖppet(veckodag: string, klockslag: number): boolean {
-  // TODO
+    // TODO
 }
 
 // 5. Summan av alla tal i listan, med en loop. summa([1, 2, 3]) ger 6.
 export function summa(tal: number[]): number {
-  // TODO
+    // TODO
 }
 
 // 6. Medelvärdet. snitt([2, 4, 6]) ger 4. Tom lista ger 0.
 export function snitt(tal: number[]): number {
-  // TODO
+    // TODO
 }
 
 // 7. Det största talet, med en loop. största([3, 9, 4]) ger 9. Tom lista ger undefined.
 export function största(tal: number[]): number | undefined {
-  // TODO
+    // TODO
 }
 
 // 8. Upprepa en text. upprepa("ab", 3) ger "ababab". Använd en loop.
 export function upprepa(text: string, antal: number): string {
-  // TODO
+    // TODO
 }
 
 // 9. En kvittorad. kvittorad("Kaffe", 2, 32) ger "2 x Kaffe: 64 kr".
 //    Använd formateraPris från uppgift 1.
 export function kvittorad(namn: string, antal: number, pris: number): string {
-  // TODO
+    // TODO
 }
 
 // 10. Pilfunktioner. Skriv dem själv med const och =>.
 //     dubbla(4) ger 8. ärJämnt(4) ger true.
 export const dubbla = (n: number): number => {
-  // TODO
-};
+    // TODO
+}
 export const ärJämnt = (n: number): boolean => {
-  // TODO
-};
+    // TODO
+}
