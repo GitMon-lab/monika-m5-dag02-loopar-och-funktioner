@@ -42,7 +42,28 @@ const namnlista: string[] = [
     'Ostmacka',
     'Latte'
 ]
+
+/*for (const namn of namnlista) {
+    console.log(namn)
+}*/
+
+index = 0
+let summa: number = 0
+for (const namn of namnlista) {
+    const pris = prislista[index]
+    console.log(namn + ' ' + pris + ' kr')
+    summa = +pris
+    index++
+}
+console.log('Summa ' + summa + ' kr')
+
 // TODO
 
 // UPPGIFT 5 (utmaning): skriv ut en multiplikationstabell för 3:ans tabell,
 //            "3 x 1 = 3" till "3 x 10 = 30".
+
+const tre: number = 3
+index = 0
+for (index = 1; index <= 10; index++) {
+    console.log(tre + ' * ' + index + ' = ' + tre * index)
+}
