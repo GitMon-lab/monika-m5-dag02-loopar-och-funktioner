@@ -73,13 +73,22 @@ export function summa(tal: number[]): number {
 // 6. Medelvärdet. snitt([2, 4, 6]) ger 4. Tom lista ger 0.
 export function snitt(tal: number[]): number {
     // TODO
+    if (tal.length === 0) {
+        return 0
+    }
+    let medel: number = 0
+    let counter: number = 0
+    for (const numb of tal) {
+        medel += tal[counter]
+        counter++
+    }
+    return medel / counter
 }
 
 // 7. Det största talet, med en loop. största([3, 9, 4]) ger 9. Tom lista ger undefined.
 export function största(tal: number[]): number | undefined {
     // TODO
     let biggestNumber: number = tal[0]
-    let prev: number = 0
 
     if (tal.length === 0) {
         return undefined
