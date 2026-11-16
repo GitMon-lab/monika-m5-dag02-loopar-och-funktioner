@@ -78,11 +78,29 @@ export function snitt(tal: number[]): number {
 // 7. Det största talet, med en loop. största([3, 9, 4]) ger 9. Tom lista ger undefined.
 export function största(tal: number[]): number | undefined {
     // TODO
+    let biggestNumber: number = tal[0]
+    let prev: number = 0
+
+    if (tal.length === 0) {
+        return undefined
+    }
+
+    for (const num of tal) {
+        if (num > biggestNumber) {
+            biggestNumber = num
+        }
+    }
+    return biggestNumber
 }
 
 // 8. Upprepa en text. upprepa("ab", 3) ger "ababab". Använd en loop.
 export function upprepa(text: string, antal: number): string {
     // TODO
+    let word: string = ''
+    for (let index = 0; index < antal; index++) {
+        word += text
+    }
+    return word
 }
 
 // 9. En kvittorad. kvittorad("Kaffe", 2, 32) ger "2 x Kaffe: 64 kr".
@@ -90,7 +108,7 @@ export function upprepa(text: string, antal: number): string {
 export function kvittorad(namn: string, antal: number, pris: number): string {
     // TODO
 
-    let sum: number = antal * pris
+    const sum: number = antal * pris
     return `${antal} x ${namn}: ${formateraPris(sum)}`
 }
 
