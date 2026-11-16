@@ -32,7 +32,7 @@ export function momsDel(pris: number): number {
 export function medRabatt(pris: number, procent: number): number {
     // TODO
     const rabatt: number = procent / 100
-    const prisMedRabatt: number = pris - rabatt
+    const prisMedRabatt: number = pris - pris * rabatt
 
     return Number(prisMedRabatt)
 }
@@ -41,11 +41,33 @@ export function medRabatt(pris: number, procent: number): number {
 //    Öppnar vid starttimmen, stänger vid sluttimmen (18 är stängt).
 export function ärÖppet(veckodag: string, klockslag: number): boolean {
     // TODO
+    let isOppet: boolean
+    if (veckodag === 'lördag' || veckodag === 'söndag') {
+        // helg öppet 9 -16
+        if (klockslag >= 9 && klockslag < 16) {
+            isOppet = true
+        } else {
+            isOppet = false
+        }
+    } else {
+        if (klockslag >= 7 && klockslag < 18) {
+            // vardag öppet 7 -18
+            isOppet = true
+        } else {
+            isOppet = false
+        }
+    }
+    return isOppet
 }
 
 // 5. Summan av alla tal i listan, med en loop. summa([1, 2, 3]) ger 6.
 export function summa(tal: number[]): number {
     // TODO
+    let totalSum: number = 0 //måste ha ett värde går inte att addera annars
+    for (let num of tal) {
+        totalSum += num
+    }
+    return totalSum
 }
 
 // 6. Medelvärdet. snitt([2, 4, 6]) ger 4. Tom lista ger 0.

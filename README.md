@@ -1,6 +1,6 @@
 # Dag 2 · Loopar och funktioner
 
-*Modul 5, UI/UX & Frontendutveckling (TypeScript), Lexicon IT-Proffs*
+_Modul 5, UI/UX & Frontendutveckling (TypeScript), Lexicon IT-Proffs_
 
 ## Vad du ska göra idag
 
@@ -16,24 +16,29 @@ Varje funktion har typer på **parametrarna** och på **det den ger tillbaka**:
 
 ```ts
 export function medRabatt(pris: number, procent: number): number {
-  // ...
+    // ...
 }
 ```
 
-`pris: number` betyder att indata måste vara ett tal. `): number` betyder att funktionen ska ge ett tal tillbaka. Startfilen har typerna färdiga. Tills du skrivit `return` understryker TypeScript funktionen i rött: *A function whose declared type is neither 'undefined', 'void', nor 'any' must return a value.* Det är rätt, och försvinner när du returnerar något. `export` framför funktionen gör att testsidan kan importera den.
+`pris: number` betyder att indata måste vara ett tal. `): number` betyder att funktionen ska ge ett tal tillbaka. Startfilen har typerna färdiga. Tills du skrivit `return` understryker TypeScript funktionen i rött: _A function whose declared type is neither 'undefined', 'void', nor 'any' must return a value._ Det är rätt, och försvinner när du returnerar något. `export` framför funktionen gör att testsidan kan importera den.
 
 ## Så arbetar du (samma som alltid)
 
-1. **Forka** dagens repo på GitHub (*Fork → Create fork*).
-2. **Klona din fork:** *Code → HTTPS → kopiera adressen*. I terminalen (Ctrl+ö i VS Code): `git clone <adressen>`. Öppna den nya mappen i VS Code.
+1. **Forka** dagens repo på GitHub (_Fork → Create fork_).
+2. **Klona din fork:** _Code → HTTPS → kopiera adressen_. I terminalen (Ctrl+ö i VS Code): `git clone <adressen>`. Öppna den nya mappen i VS Code.
 3. **Installera verktygen, en gång per repo:** `npm install` i terminalen.
-4. **Starta servern:** `npm run dev`. Öppna adressen den skriver ut (oftast `http://localhost:5173/`). Tryck F12 och välj fliken *Console*. Stoppa med Ctrl+C. Testsidan öppnar du på samma server: `http://localhost:5173/tests.html` (lägg till `/tests.html` efter adressen).
+
+4. **Starta servern:** `npm run dev`. Öppna adressen den skriver ut (oftast `http://localhost:5173/`). Tryck F12 och välj fliken _Console_. Stoppa med Ctrl+C. Testsidan öppnar du på samma server: `http://localhost:5173/tests.html` (lägg till `/tests.html` efter adressen).
+
 5. **Gör uppgiften.** Spara och kontrollera i webbläsaren och Console efter varje steg. Gör en commit efter varje avslutat steg: `git add .` och `git commit -m "Beskriv vad du gjorde"`.
+
 6. **Kontrollera typerna:** `npm run typecheck`. Tyst betyder att alla typer stämmer. Röda understrykningar i VS Code är TypeScript som varnar.
+
 7. **Skicka upp** när du är klar: `git push`.
+
 8. **Lämna in i Microsoft Forms.**
 
-Fastnar du: skriv ner exakt var och vad du försökt (och vilket felmeddelande du fick), och ta det först i nästa handledda pass. Problem med `npm` eller Node? Läs *Elevguide: Node, Vite och TypeScript*.
+Fastnar du: skriv ner exakt var och vad du försökt (och vilket felmeddelande du fick), och ta det först i nästa handledda pass. Problem med `npm` eller Node? Läs _Elevguide: Node, Vite och TypeScript_.
 
 > Vite tar bara bort typerna och kör koden. Den kontrollerar dem inte. Sidan kan alltså köras trots röda understrykningar.
 
@@ -47,13 +52,15 @@ Fastnar du: skriv ner exakt var och vad du försökt (och vilket felmeddelande d
 
 Öppna `tests.html` på servern (`http://localhost:5173/tests.html`). De flesta tester är röda, och det är meningen. Öppna `src/tests.ts` och läs de två första testerna. Vad förväntas av `formateraPris(35)`? Gissa vad `formateraPris` ska göra innan du skriver den.
 
+//Antagligen göra om till två decimaler om det är fler än två och lägga till kr
+
 ### Steg 3. Skriv funktionerna 1–3
 
 I `src/funktioner.ts`: skriv `formateraPris`, `momsDel` och `medRabatt`. Ladda om `tests.html` efter varje funktion. Funktionen ska använda `return`, inte `console.log`. Commit när de tre testerna är gröna.
 
 ### Steg 4. Skriv funktion 4: ärÖppet
 
-Du löste samma problem igår, nu ska det bli en funktion som tar `veckodag` och `klockslag` som parametrar och returnerar `true` eller `false`. Tänk på att 18 är *stängt* på vardagar och 16 på helger.
+Du löste samma problem igår, nu ska det bli en funktion som tar `veckodag` och `klockslag` som parametrar och returnerar `true` eller `false`. Tänk på att 18 är _stängt_ på vardagar och 16 på helger.
 
 ### Steg 5. Skriv funktionerna 5–8 med loopar
 
@@ -69,11 +76,11 @@ Skriv `dubbla` och `ärJämnt` som pilfunktioner: `export const dubbla = (n: num
 
 ### Steg 8. Scope: förutsäg
 
-Lägg till filen `src/scope.ts` (skapa själv). Skriv koden i `scope.md` (finns i repot) i filen, men *gissa först* vad varje `console.log` skriver ut. Kör sedan och jämför. Skriv en regel med egna ord om vad en funktion kan och inte kan "se".
+Lägg till filen `src/scope.ts` (skapa själv). Skriv koden i `scope.md` (finns i repot) i filen, men _gissa först_ vad varje `console.log` skriver ut. Kör sedan och jämför. Skriv en regel med egna ord om vad en funktion kan och inte kan "se".
 
 ### Steg 9. Felsök med en brytpunkt
 
-Öppna DevTools → fliken *Sources* → öppna `src/funktioner.ts`. Klicka på radnumret i `summa` för att sätta en brytpunkt och ladda om. Koden stannar. Stega med F10 och titta på värdet av `total` i panelen *Scope*. Det här verktyget är bättre än `console.log` när du fastnar.
+Öppna DevTools → fliken _Sources_ → öppna `src/funktioner.ts`. Klicka på radnumret i `summa` för att sätta en brytpunkt och ladda om. Koden stannar. Stega med F10 och titta på värdet av `total` i panelen _Scope_. Det här verktyget är bättre än `console.log` när du fastnar.
 
 ## Kontrollista: så vet du att du är klar
 
@@ -92,7 +99,7 @@ Lägg till filen `src/scope.ts` (skapa själv). Skriv koden i `scope.md` (finns 
 - Det röda testmeddelandet säger vad som förväntades och vad du fick. Läs det: `förväntade "35 kr" men fick undefined` betyder oftast att du glömt `return`.
 - Testar du en funktion i Console? Klistra in funktionen och anropa den: `formateraPris(35)`.
 - Skickar du fel typ till en funktion, till exempel `summa("hej")`, säger TypeScript ifrån direkt. I JavaScript hade du fått `NaN` eller konstiga resultat först när koden kördes.
-- En loop som aldrig slutar? Tryck på *Stop* i webbläsaren, eller stäng fliken. Kontrollera att räknaren ändras i loopen.
+- En loop som aldrig slutar? Tryck på _Stop_ i webbläsaren, eller stäng fliken. Kontrollera att räknaren ändras i loopen.
 - `for (let i = 0; i <= tal.length; i++)` går ett steg för långt. Använd `<`.
 
 ## Inlämning
@@ -107,5 +114,5 @@ I formuläret fyller du i:
 ## Vill du mer? (frivilligt)
 
 - Skriv en funktion `kvitto(namn, priser)` som returnerar hela kvittot som en text med radbrytningar.
-- Lägg till egna tester i `src/tests.ts` för `upprepa` med negativt antal. Vad *bör* hända?
+- Lägg till egna tester i `src/tests.ts` för `upprepa` med negativt antal. Vad _bör_ hända?
 - Skriv `fizzbuzz(n)` (läs om uppgiften på MDN eller Wikipedia) och testa den.
